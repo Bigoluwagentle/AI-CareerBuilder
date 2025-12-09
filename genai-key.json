@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ai-careerbuilder-480616",
+  "private_key_id": "57c153e260eb3b90242d46b90c9d4514300781d4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCQH926Hqw5GB1G\nNR5QbzD28q9OCZEkSuUHV4/W2eP5iQgVUEiNRa78+de7WQSJSu8dBpaqmdu8EdcU\nyyDQbg4pGDKGb9oYRaitXBHqz2whVvcALBKVKGEbEC3AUw8383uDtUOdpd0KyOzs\nMBG2lK6C6ir1I8KGKjBX5gqVojtSyOsBUNQqjxuyVE6dbI0Sz3Dmq/Dw0YBAVurv\n2+LdIY106biMbVCGWKUwbrqxg6w+pUT3Hxa9l1r/XJa3WNKDFqu3SigERfgyS15J\ndzuHbUh1OHOabxEdBu8jx7XOeY5fSi402xix6HPevuxj94CNrDc1//NmQrWorE/a\neghXRr6nAgMBAAECggEABxObE/xVXkvmuBLiOHaiAIyDx6c+ZxOxJJSlXYCYw7pf\n2SGphk8OTtT63w1f/liQq0V7ci7LmsCETCMsxJjHlwRdcSHR1oPcSrLTUGSISlsv\n4peUMmdN3IHSKHgLlPNrTgxa7Xhk65aLbfQ7eNJBGIpKuxTbHf8ftr+Qja6H28Jd\n3kn237lXz1eKWX4g6XlBjV4csxsVo/SwqihJJqiHozjubHhmCUdoiq/XK5bCpt/3\nfhfcHPsEr98WcFFAnfw1PXMeCKx82xCoftyoL+GFwPhRmMxVhbdB+vIZHKl/qByV\nPsOjkTWFjQq1d93GU+2m3Ttmebh1pOgWrsp79Fu+pQKBgQDLwVRnWnxTmgHOJKyc\nUSUO2PzEURP7xhNBJUOFz+qHEeekJwk01uuITGX1TcI7iRb4Prl4QwAGxz9ubSfm\nj+LFuRzCp391yXQGjI1LG4PzWFvEH8n1I4g15LmU73QmMAbYQutE4pd78/bYSngr\ntVHlpBygnWhuUyApcHILgKsykwKBgQC1FFLbRpvkVpYBQre+9HS8rjyubrQwoaI2\ndO0lAnPihOq8DNQjD9HHtCK3o+X8Dg8ubc9a5tK8Ou6iACZk0J5A40h+YhaGAllx\nL5yt7Svw6/pKXw2GCIhReXlhPgZcMeKbtgZ1UYx2e+q7W6TZmzNUTs9e0dDShrnK\npi1qJsRsHQKBgQDBFPt+1WhrcM21I1vO5bZQU590CcD+Hb2xRjauX1DHnlf8XmGD\nCQc5qewUgRNGh6qUpBvtstAbnESnyBi/jCpBZCG09DT80WJ5skdSnUh1GY4cVGN1\nQa6aI50ZXbCbX3edCA0awf77Hz0Tyb4G7VQmYVYffgqwQWWA32WzMMMKsQKBgHiL\naw0mWCkNqxZzv7aTLhNdOnA0qielskLmW+hDVbn6GfnN4Hrm0RRMyr/NkBDXmyuh\nVmSBPNCpuqqFxwleB7vSkjPwQGY9siUzOO5f8NyVey1/UZVkoLr8Tt15WOqPGvfl\nmS8IdqV5oK3ROFDUjLsXK91Hd+huX8iUD6+W1zPRAoGAJNfzCCCIPkTKc/JaaV/Z\nO1nU4D7vo60g61kFvDqf73f6Tqq1L9hCRkjhEOhydydk9g84seyllmube8JmDKBU\nP2vdHbA1hTjATjwSQ5aWeZpMaQJ4qnReBj9KFhdUrbZ4cktPWDhsKUh33Ade8vkq\n59Wjfs26k/JElle5SkAxJkI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "genai-service-account@ai-careerbuilder-480616.iam.gserviceaccount.com",
+  "client_id": "103392057413499369605",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/genai-service-account%40ai-careerbuilder-480616.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

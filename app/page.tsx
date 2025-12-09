@@ -1,65 +1,195 @@
 import Image from "next/image";
+import Logo from "@/public/logo.png";
+import Link from "next/link";
+import Assit from "@/public/assist.png";
+import Ease from "@/public/ease.png";
+import Generator from "@/public/generator.png";
+import Smart from "@/public/smart.png";
+import Photo from "@/public/photo.png";
+import Sarah from "@/public/sarah.png"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <header className="flex items-end justify-between px-5 pb-3 border-b-2 border-solid border-gray-100">
+        <div className="flex items-end gap-10">
+          <Image src={Logo} alt="logo" width={250} height={250} />
+          <nav className="hidden md:flex gap-8">
+            <Link href="#" className="hover:text-[#3DA8F5FF]">Features</Link>
+            <Link href="#" className="hover:text-[#3DA8F5FF]">Pricing</Link>
+            <Link href="#" className="hover:text-[#3DA8F5FF]">Testimonial</Link>
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="hidden md:flex items-center gap-5">
+          <Link href="/login"><button className="min-w-20 h-10 cursor-pointer rounded-sm bg-gray-100">Login</button></Link>
+          <Link href="/"><button className="min-w-20 px-3 h-10 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button></Link>
         </div>
+      </header>
+
+      <section className="flex flex-col items-center text-center mt-15 leading-15">
+        <h1 className="text-[3rem] md:text-[4rem] font-bold text-4xl w-[100%] md:w-200">Build Your Resume & Portfolio With AI — Faster.</h1>
+        <p className="mt-10 mb-6 w-full md:w-150 leading-7 text-[16px] text-[#565D6DFF]">Leverage the power of AI to craft stunning resumes and portfolios that stand out. Get personalized content, smart templates, and real-time feedback to land your dream job.</p>
+        <nav className="flex items-center gap-2 md:gap-5 mt-4">
+          <Link href="/register"><button className="px-10 md:px-4 md:min-w-60 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button></Link>
+          <Link href="/login"><button className="px-10 md:px-4 md:min-w-60 cursor-pointer bg-gray-100 rounded-sm text-black">Try Free</button></Link>
+        </nav>
+      </section>
+
+      <main className="w-full bg-[#FAFAFBFF] min-h-50 mt-30 pb-5">
+        <h2 className="py-8 text-center font-bold text-3xl">Supercharge Your Career Journey</h2>
+        <section className="flex flex-col md:flex-row px-5 gap-15 md-5 mb-30">
+          <article className="flex flex-col items-center flex-1 px-2 py-3 text-center bg-white min-h-50">
+            <Image src={Assit} alt="assist"/>
+            <h4 className="font-bold mt-3 mb-3">AI Resume Assistant</h4>
+            <p className="text-[#565D6DFF]">Generate compelling bullet points and professional summaries tailored to your target roles with intelligent AI suggestions.</p>
+          </article>
+
+          <article className="flex flex-col items-center text-center flex-1 p-3 bg-white rounded-sm min-h-50">
+            <Image src={Generator} alt="generator" />
+            <h4 className="font-bold mt-3 mb-3">Dynamic Portfolio Generator</h4>
+            <p className="text-[#565D6DFF]">Showcase your projects and achievements in beautiful, interactive portfolios, automatically generated and optimized for impact.</p>
+          </article>
+
+          <article className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
+            <Image src={Smart} alt="assist"/>
+            <h4 className="font-bold mt-3 mb-3">Smart Templates & Designs</h4>
+            <p className="text-[#565D6DFF]">Choose from a curated selection of modern, ATS-friendly templates for resumes and stunning layouts for portfolios.</p>
+          </article>
+
+          <article className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
+            <Image src={Ease} alt="assist"/>
+            <h4 className="font-bold mt-3 mb-3">Export & Share with Ease</h4>
+            <p className="text-[#565D6DFF]">Download your professional documents as polished PDFs or share your portfolio online with a unique, secure link.</p>
+          </article>
+        </section>
       </main>
+
+
+      <section className="w-full min-h-40 flex flex-col items-center text-center mt-30 px-8">
+        <h1 className="font-bold text-3xl mb-3">See Your Professional Future Unfold</h1>
+        <p className="w-full md:w-170 text-[#565D6DFF] mb-5">Our intuitive interface combined with powerful AI makes career building simple, efficient, and enjoyable. Visualize your progress and customize every detail.</p>
+        <Image src={Photo} alt="photo" className="w-[100%] h-150 object-cover rounded-sm"/>
+      </section>
+
+      <aside className="bg-[#FAFAFBFF] py-10 mt-30">
+        <h1 className="text-center font-bold text-3xl mb-10">Trusted by Job Seekers and Professionals Worldwide</h1>
+        <section className="flex flex-col md:flex-row gap-10 px-3">
+
+          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+            <p className="text-[#565D6DFF] mb-10 italic">"AI CareerBuilder transformed my job search. The AI suggestions were spot-on, and I landed interviews for my dream roles within weeks. Highly recommend!"</p>
+            <div className="flex items-center">
+              <Image src={Sarah} alt="sarah" />
+              <nav className="flex-1">
+                <h4 className="font-bold text-[15px]">Sarah J.</h4>
+                <p className="text-sm text-[#565D6DFF]">Marketing Specialist</p>
+              </nav>
+            </div>
+          </nav>
+
+          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+            <p className="text-[#565D6DFF] mb-10 italic">"Creating my portfolio used to be a daunting task. With AI CareerBuilder, it was an absolute breeze. The templates are gorgeous, and the AI descriptions saved me hours."</p>
+            <div className="flex items-center">
+              <Image src={Sarah} alt="sarah" />
+              <nav className="flex-1">
+                <h4 className="font-bold text-[15px]">Michael T.</h4>
+                <p className="text-sm text-[#565D6DFF]">Software Engineer</p>
+              </nav>
+            </div>
+          </nav>
+          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+            <p className="text-[#565D6DFF] mb-10 italic">"AI CareerBuilder transformed my job search. The AI suggestions were spot-on, and I landed interviews for my dream roles within weeks. Highly recommend!"</p>
+            <div className="flex items-center">
+              <Image src={Sarah} alt="sarah" />
+              <nav className="flex-1">
+                <h4 className="font-bold text-[15px]">SEmily R.</h4>
+                <p className="text-sm text-[#565D6DFF]">Project Manager</p>
+              </nav>
+            </div>
+          </nav>
+        </section>
+      </aside>
+
+      <summary className="mt-30">
+        <h1 className="text-center font-bold text-3xl">Simple, Transparent Pricing</h1>
+        <p className="mt-3 text-center text-[#565D6DFF]">Choose a plan that fits your career ambitions. No hidden fees, cancel anytime.</p>
+      </summary>
+
+      <summary className="flex flex-col md:flex-row gap-10 px-8 mt-10">
+        <div className="flex flex-col items-center text-center flex-1 min-h-50 border-1 border-solid border-gray-110 rounded-sm">
+          <h4 className="pt-2 font-bold mt-2">Basic</h4>
+          <h1 className="font-bold text-4xl text-[#3DA8F5FF]">$0</h1>
+          <p className="mt-1 text-sm text-[#565D6DFF] mb-10">Free forever</p>
+          <nav className="w-[80%] text-start">
+            <p className="text-sm mb-1 text-[#565D6DFF]">1 Resume Template</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Basic AI Assistance</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">PDF Export</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Limited Storage</p>
+            <p className="text-sm mb-1 text-white">nnnn</p>
+            <Link href="/login">
+              <button className="mt-10 mb-3 bg-[#3DA8F5FF] w-full h-10 rounded-sm text-white cursor-pointer">Start for Free</button>
+            </Link>
+          </nav>
+        </div>
+        <div className="flex flex-col items-center text-center flex-1 min-h-50 border-2 border-solid border-[#3DA8F5FF] rounded-sm">
+          <h4 className="pt-2 font-bold mt-2">Pro</h4>
+          <h1 className="font-bold text-4xl text-[#3DA8F5FF]">$9.99</h1>
+          <p className="mt-1 text-sm text-[#565D6DFF] mb-10">Per month</p>
+          <nav className="w-[80%] text-start">
+            <p className="text-sm mb-1 text-[#565D6DFF]">Unlimited Resume Templates</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Advanced AI Assistance</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Full Portfolio Builder</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Priority Support</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Custom Themes</p>
+            <Link href="/login">
+              <button className="mt-10 mb-3 bg-[#3DA8F5FF] w-full h-10 rounded-sm text-white cursor-pointer">Get Pro Now</button>
+            </Link>
+          </nav>
+        </div>
+        <div className="flex flex-col items-center text-center flex-1 min-h-50 border-1 border-solid border-gray-110 rounded-sm">
+          <h4 className="pt-2 font-bold mt-2">Enterprise</h4>
+          <h1 className="font-bold text-4xl text-[#3DA8F5FF]">Contact Us</h1>
+          <p className="mt-1 text-sm text-[#565D6DFF] mb-10">Custom pricing</p>
+          <nav className="w-[80%] text-start">
+            <p className="text-sm mb-1 text-[#565D6DFF]">All Pro Features</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Team Collaboration</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Dedicated Account Manager</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">Advanced Analytics</p>
+            <p className="text-sm mb-1 text-[#565D6DFF]">API Access</p>
+            <Link href="/login">
+              <button className="mt-10 mb-3 bg-[#3DA8F5FF] w-full h-10 rounded-sm text-white cursor-pointer">Request a Demo</button>
+            </Link>
+          </nav>
+        </div>
+      </summary>
+
+      <footer className="mt-30 w-full min-h-70 bg-[#3DA8F5FF]">
+        <section className="flex flex-col md:flex-row justify-center md:items-center pt-8 gap-10 px-5">
+          <div className="md:w-[25%]">
+            <Image src={Logo} alt="logo" width={250} height={250} />
+            <p className="text-white mt-5">Build your professional presence with AI CareerBuilder.</p>
+          </div>
+          <div className="w-[25%]">
+            <h4 className="font-bold mb-3">Product</h4>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Resume Builder</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Portfolio Builder</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Templates</p>
+          </div>
+          <div className="w-[25%]">
+            <h4 className="font-bold mb-3">Company</h4>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">About Us</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Contact</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Careers</p>
+          </div>
+          <div className="w-[25%]">
+            <h4 className="font-bold mb-3">Resources</h4>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Blog</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Support</p>
+            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Privacy Policy</p>
+          </div>
+        </section>
+        <p className="text-center mt-10 py-10 text-sm text-gray-200 border-t-1 border-solid border-gray-300">© 2025 AI CareerBuilder. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
