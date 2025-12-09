@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 import Logo from "@/public/logo.png";
 import Link from "next/link";
 import Assit from "@/public/assist.png";
@@ -9,30 +11,43 @@ import Photo from "@/public/photo.png";
 import Sarah from "@/public/sarah.png"
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <header className="flex items-end justify-between px-5 pb-3 border-b-2 border-solid border-gray-100">
-        <div className="flex items-end gap-10">
-          <Image src={Logo} alt="logo" width={250} height={250} />
-          <nav className="hidden md:flex gap-8">
-            <Link href="#" className="hover:text-[#3DA8F5FF]">Features</Link>
-            <Link href="#" className="hover:text-[#3DA8F5FF]">Pricing</Link>
-            <Link href="#" className="hover:text-[#3DA8F5FF]">Testimonial</Link>
-          </nav>
-        </div>
+      <header className="flex flex-col md:flex-row md:items-end md:justify-between px-5 pb-3 border-b-2 border-solid border-gray-100">
+      
+      <div className="flex items-end justify-between w-full md:w-auto">
+        <Image src={Logo} alt="logo" width={250} height={250} />
+        <button
+          className="md:hidden text-2xl focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <i className="fa-solid fa-bars"></i>
+        </button>
+      </div>
 
-        <div className="hidden md:flex items-center gap-5">
-          <Link href="/login"><button className="min-w-20 h-10 cursor-pointer rounded-sm bg-gray-100">Login</button></Link>
-          <Link href="/"><button className="min-w-20 px-3 h-10 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button></Link>
-        </div>
-      </header>
+      <nav className={`flex-col md:flex-row md:flex gap-8 mt-3 md:mt-0 ${isOpen ? "flex" : "hidden"} md:flex`}>
+        <Link href="#" className="hover:text-[#3DA8F5FF]">Features</Link>
+        <Link href="#" className="hover:text-[#3DA8F5FF]">Pricing</Link>
+        <Link href="#" className="hover:text-[#3DA8F5FF]">Testimonial</Link>
+      </nav>
+
+      <div className={`flex-col md:flex-row md:flex items-start md:items-center gap-3 md:gap-5 mt-3 md:mt-0 ${isOpen ? "flex" : "hidden"} md:flex`}>
+        <Link href="/login">
+          <button className="min-w-20 h-10 cursor-pointer rounded-sm bg-gray-100">Login</button>
+        </Link>
+        <Link href="/">
+          <button className="min-w-20 px-3 h-10 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button>
+        </Link>
+      </div>
+    </header>
 
       <section className="flex flex-col items-center text-center mt-15 leading-15">
         <h1 className="text-[3rem] md:text-[4rem] font-bold text-4xl w-[100%] md:w-200">Build Your Resume & Portfolio With AI — Faster.</h1>
         <p className="mt-10 mb-6 w-full md:w-150 leading-7 text-[16px] text-[#565D6DFF]">Leverage the power of AI to craft stunning resumes and portfolios that stand out. Get personalized content, smart templates, and real-time feedback to land your dream job.</p>
         <nav className="flex items-center gap-2 md:gap-5 mt-4">
           <Link href="/register"><button className="px-10 md:px-4 md:min-w-60 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button></Link>
-          <Link href="/login"><button className="px-10 md:px-4 md:min-w-60 cursor-pointer bg-gray-100 rounded-sm text-black">Try Free</button></Link>
+          <Link href="/login"><button className="px-13 md:px-4 md:min-w-60 cursor-pointer bg-gray-100 rounded-sm text-black">Try Free</button></Link>
         </nav>
       </section>
 
@@ -163,32 +178,32 @@ export default function Home() {
         </div>
       </summary>
 
-      <footer className="mt-30 w-full min-h-70 bg-[#3DA8F5FF]">
+      <footer className="mt-30 w-full min-h-70 bg-[#FAFAFBFF]">
         <section className="flex flex-col md:flex-row justify-center md:items-center pt-8 gap-10 px-5">
           <div className="md:w-[25%]">
             <Image src={Logo} alt="logo" width={250} height={250} />
-            <p className="text-white mt-5">Build your professional presence with AI CareerBuilder.</p>
+            <p className="text-[#565D6DFF] mt-5">Build your professional presence with AI CareerBuilder.</p>
           </div>
           <div className="w-[25%]">
             <h4 className="font-bold mb-3">Product</h4>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Resume Builder</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Portfolio Builder</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Templates</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Resume Builder</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Portfolio Builder</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Templates</p>
           </div>
           <div className="w-[25%]">
             <h4 className="font-bold mb-3">Company</h4>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">About Us</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Contact</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Careers</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">About Us</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Contact</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Careers</p>
           </div>
           <div className="w-[25%]">
             <h4 className="font-bold mb-3">Resources</h4>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Blog</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Support</p>
-            <p className="text-[#FAFAFBFF] cursor-pointer mb-1 text-sm">Privacy Policy</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Blog</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Support</p>
+            <p className="text-[#565D6DFF] cursor-pointer mb-1 text-sm">Privacy Policy</p>
           </div>
         </section>
-        <p className="text-center mt-10 py-10 text-sm text-gray-200 border-t-1 border-solid border-gray-300">© 2025 AI CareerBuilder. All rights reserved.</p>
+        <p className="text-center mt-10 py-10 text-sm text-[#565D6DFF] border-t-1 border-solid border-gray-300">© 2025 AI CareerBuilder. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/firebase/loginUser";
+import { auth, googleProvider } from "@/firebase/config";
+import { signInWithPopup } from "firebase/auth";
 
 export default function Login() {
   const router = useRouter();
@@ -23,19 +26,26 @@ export default function Login() {
       await loginUser(form.email, form.password);
       router.push("/dashboard");
     } catch (error: any) {
-      alert(error.message);
+      toast.error(`Oops! ${error.message} 😬`);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      router.push("/dashboard");
+    } catch (error: any) {
+      alert(error.message);
     }
   };
 
   return (
     <div className="w-full min-h-screen bg-[#FFFFFF]">
       <main className="flex flex-col md:flex-row w-full min-h-screen bg-[#FFFFFF]">
-        {/* Left Image Side (hidden on mobile) */}
         <section className="hidden md:flex flex-1 bg-[url('/photo.png')] bg-no-repeat bg-cover"></section>
 
-        {/* Login Form */}
         <form
           onSubmit={handleLogin}
           className="flex flex-col items-center justify-center text-center flex-1 bg-gray-100 py-10"
@@ -72,7 +82,7 @@ export default function Login() {
             />
           </div>
 
-          {/* Login Button */}
+          {/* Login button */}
           <div className="mt-9 w-[80%]">
             <button
               type="submit"
@@ -91,9 +101,11 @@ export default function Login() {
 
           <p className="text-center py-7">OR</p>
 
+          {/* Google Sign-In */}
           <nav className="w-[80%]">
             <button
               type="button"
+              onClick={handleGoogleSignIn}
               className="bg-[#FAFAFBFF] w-full h-13 text-black cursor-pointer rounded-sm mb-3"
             >
               Continue with Google

@@ -20,7 +20,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Hamburger for Mobile */}
       <div className="md:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -30,7 +29,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-screen bg-[#FAFAFBFF] w-64 z-40 transform transition-transform duration-300
           ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:w-[20%]`}
@@ -60,13 +58,15 @@ export default function Navbar() {
             </nav>
 
             <footer className="border-t-2 border-solid border-gray-100 py-4 w-full flex justify-center">
-              <Image src={Sarah} alt="profile" width={60} height={60} className="cursor-pointer" />
+              <Link href="/settings">
+                <Image src={Sarah} alt="profile" width={60} height={60} className="cursor-pointer" />
+              </Link>
+              
             </footer>
           </section>
         </div>
       </aside>
 
-      {/* Overlay when sidebar is open on mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-30 md:hidden"

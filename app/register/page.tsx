@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { registerUser } from "@/firebase/registerUser";
+import { auth, googleProvider } from "@/firebase/config";
+import { signInWithPopup } from "firebase/auth";
 
 export default function Register() {
   const router = useRouter();
@@ -23,14 +26,23 @@ export default function Register() {
     try {
       await registerUser(form.email, form.username, form.password);
 
-      alert("Account created successfully!");
+      toast.success("Account created! Time to conquer the world 🌎");
       setForm({ email: "", username: "", password: "" });
 
       router.push("/dashboard");
     } catch (error: any) {
-      alert(error.message);
+      toast.error(`Oops! ${error.message} 😬`);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      router.push("/dashboard");
+    } catch (error: any) {
+      toast.error(`Oops! ${error.message} 😬`);
     }
   };
 
@@ -88,7 +100,18 @@ export default function Register() {
             {loading ? "Registering..." : "Register"}
           </button>
 
-          <Link href="/login" className="text-sm text-[#3DA8F5FF]">
+          <p className="text-center py-4">OR</p>
+
+          {/* Google Sign-In */}
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            className="bg-[#FAFAFBFF] w-full h-12 text-black cursor-pointer rounded-sm mb-3"
+          >
+            Continue with Google
+          </button>
+
+          <Link href="/login" className="text-sm text-[#3DA8F5FF] mt-3">
             Already have an account? Login
           </Link>
         </form>
