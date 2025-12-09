@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Logo from "@/public/logo.png";
 import Link from "next/link";
 import Assit from "@/public/assist.png";
@@ -14,7 +15,11 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <header className="flex flex-col md:flex-row md:items-end md:justify-between px-5 pb-3 border-b-2 border-solid border-gray-100">
+      <motion.header 
+      initial={{y:-40, opacity:0}}
+      whileInView={{y:0,opacity:1}}
+      transition={{duration:1}}
+      className="flex flex-col md:flex-row md:items-end md:justify-between px-5 pb-3 border-b-2 border-solid border-gray-100">
       
       <div className="flex items-end justify-between w-full md:w-auto">
         <Image src={Logo} alt="logo" width={250} height={250} />
@@ -40,50 +45,90 @@ export default function Home() {
           <button className="min-w-20 px-3 h-10 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button>
         </Link>
       </div>
-    </header>
+    </motion.header>
 
-      <section className="flex flex-col items-center text-center mt-15 leading-15">
-        <h1 className="text-[3rem] md:text-[4rem] font-bold text-4xl w-[100%] md:w-200">Build Your Resume & Portfolio With AI — Faster.</h1>
-        <p className="mt-10 mb-6 w-full md:w-150 leading-7 text-[16px] text-[#565D6DFF]">Leverage the power of AI to craft stunning resumes and portfolios that stand out. Get personalized content, smart templates, and real-time feedback to land your dream job.</p>
+      <section className="flex flex-col items-center text-center mt-10 leading-15">
+        <motion.h1 
+        initial={{y:50}}
+        whileInView={{y:0}}
+        transition={{duration:1}}
+        className="text-[3rem] md:text-[4rem] font-bold text-4xl w-[100%] md:w-200">Build Your Resume & Portfolio With AI — Faster.</motion.h1>
+        <motion.p 
+        initial={{y:50, opacity:0}}
+        whileInView={{y:0, opacity:1}}
+        transition={{duration:1}}
+        className="mt-10 mb-6 w-full md:w-150 leading-7 text-[16px] text-[#565D6DFF]">Leverage the power of AI to craft stunning resumes and portfolios that stand out. Get personalized content, smart templates, and real-time feedback to land your dream job.</motion.p>
         <nav className="flex items-center gap-2 md:gap-5 mt-4">
-          <Link href="/register"><button className="px-10 md:px-4 md:min-w-60 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</button></Link>
-          <Link href="/login"><button className="px-13 md:px-4 md:min-w-60 cursor-pointer bg-gray-100 rounded-sm text-black">Try Free</button></Link>
+          <Link href="/register"><motion.button 
+            initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition={{duration:1, type: "spring", stiffness: 120}}
+          className="px-10 md:px-4 md:min-w-60 cursor-pointer rounded-sm bg-[#3DA8F5FF] text-white">Get Started</motion.button></Link>
+          <Link href="/login"><motion.button 
+          initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition={{duration:1, type: "spring", stiffness: 120, delay:0.2}}
+          className="px-13 md:px-4 md:min-w-60 cursor-pointer bg-gray-100 rounded-sm text-black">Try Free</motion.button></Link>
         </nav>
       </section>
 
       <main className="w-full bg-[#FAFAFBFF] min-h-50 mt-30 pb-5">
         <h2 className="py-8 text-center font-bold text-3xl">Supercharge Your Career Journey</h2>
         <section className="flex flex-col md:flex-row px-5 gap-15 md-5 mb-30">
-          <article className="flex flex-col items-center flex-1 px-2 py-3 text-center bg-white min-h-50">
+          <motion.article 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1}}
+          className="flex flex-col items-center flex-1 px-2 py-3 text-center bg-white min-h-50">
             <Image src={Assit} alt="assist"/>
             <h4 className="font-bold mt-3 mb-3">AI Resume Assistant</h4>
             <p className="text-[#565D6DFF]">Generate compelling bullet points and professional summaries tailored to your target roles with intelligent AI suggestions.</p>
-          </article>
+          </motion.article>
 
-          <article className="flex flex-col items-center text-center flex-1 p-3 bg-white rounded-sm min-h-50">
+          <motion.article 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1, delay:0.3}}
+          className="flex flex-col items-center text-center flex-1 p-3 bg-white rounded-sm min-h-50">
             <Image src={Generator} alt="generator" />
             <h4 className="font-bold mt-3 mb-3">Dynamic Portfolio Generator</h4>
             <p className="text-[#565D6DFF]">Showcase your projects and achievements in beautiful, interactive portfolios, automatically generated and optimized for impact.</p>
-          </article>
+          </motion.article>
 
-          <article className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
+          <motion.article 
+            initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1, delay:0.6}}
+          className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
             <Image src={Smart} alt="assist"/>
             <h4 className="font-bold mt-3 mb-3">Smart Templates & Designs</h4>
             <p className="text-[#565D6DFF]">Choose from a curated selection of modern, ATS-friendly templates for resumes and stunning layouts for portfolios.</p>
-          </article>
+          </motion.article>
 
-          <article className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
+          <motion.article 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1, delay:0.9}}
+          className="flex flex-col items-center text-center rounded-sm flex-1 p-3 bg-white min-h-50">
             <Image src={Ease} alt="assist"/>
             <h4 className="font-bold mt-3 mb-3">Export & Share with Ease</h4>
             <p className="text-[#565D6DFF]">Download your professional documents as polished PDFs or share your portfolio online with a unique, secure link.</p>
-          </article>
+          </motion.article>
         </section>
       </main>
 
 
-      <section className="w-full min-h-40 flex flex-col items-center text-center mt-30 px-8">
-        <h1 className="font-bold text-3xl mb-3">See Your Professional Future Unfold</h1>
-        <p className="w-full md:w-170 text-[#565D6DFF] mb-5">Our intuitive interface combined with powerful AI makes career building simple, efficient, and enjoyable. Visualize your progress and customize every detail.</p>
+      <section className="w-full min-h-40 flex flex-col items-center text-center px-8">
+        <motion.h1 
+        initial={{y:100}}
+          whileInView={{y:0}}
+          transition={{duration:1}}
+        className="font-bold text-3xl mb-3">See Your Professional Future Unfold</motion.h1>
+        <motion.p 
+        initial={{y:100}}
+          whileInView={{y:0}}
+          transition={{duration:1}}
+        className="w-full md:w-170 text-[#565D6DFF] mb-5">Our intuitive interface combined with powerful AI makes career building simple, efficient, and enjoyable. Visualize your progress and customize every detail.</motion.p>
         <Image src={Photo} alt="photo" className="w-[100%] h-150 object-cover rounded-sm"/>
       </section>
 
@@ -91,7 +136,11 @@ export default function Home() {
         <h1 className="text-center font-bold text-3xl mb-10">Trusted by Job Seekers and Professionals Worldwide</h1>
         <section className="flex flex-col md:flex-row gap-10 px-3">
 
-          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+          <motion.nav 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1}}
+          className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
             <p className="text-[#565D6DFF] mb-10 italic">"AI CareerBuilder transformed my job search. The AI suggestions were spot-on, and I landed interviews for my dream roles within weeks. Highly recommend!"</p>
             <div className="flex items-center">
               <Image src={Sarah} alt="sarah" />
@@ -100,9 +149,13 @@ export default function Home() {
                 <p className="text-sm text-[#565D6DFF]">Marketing Specialist</p>
               </nav>
             </div>
-          </nav>
+          </motion.nav>
 
-          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+          <motion.nav 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1, delay:0.2}}
+          className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
             <p className="text-[#565D6DFF] mb-10 italic">"Creating my portfolio used to be a daunting task. With AI CareerBuilder, it was an absolute breeze. The templates are gorgeous, and the AI descriptions saved me hours."</p>
             <div className="flex items-center">
               <Image src={Sarah} alt="sarah" />
@@ -111,8 +164,12 @@ export default function Home() {
                 <p className="text-sm text-[#565D6DFF]">Software Engineer</p>
               </nav>
             </div>
-          </nav>
-          <nav className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
+          </motion.nav>
+          <motion.nav 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1, delay:0.4}}
+          className="bg-white flex-1 min-h-20 p-3 rounded-sm border-1 border-solid border-gray-100">
             <p className="text-[#565D6DFF] mb-10 italic">"AI CareerBuilder transformed my job search. The AI suggestions were spot-on, and I landed interviews for my dream roles within weeks. Highly recommend!"</p>
             <div className="flex items-center">
               <Image src={Sarah} alt="sarah" />
@@ -121,7 +178,7 @@ export default function Home() {
                 <p className="text-sm text-[#565D6DFF]">Project Manager</p>
               </nav>
             </div>
-          </nav>
+          </motion.nav>
         </section>
       </aside>
 

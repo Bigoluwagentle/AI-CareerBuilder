@@ -4,10 +4,10 @@ import Navbar from "../navbar/page";
 export default function Dashboard(){
     return(
         <div>
-            <main className="flex">
+            <main className="flex flex-col md:flex-row">
                 <Navbar/>
                 <section className="w-full md:w-[80%] min-h-screen">
-                    <article className="ml-10 md:0 pl-10 md:pr-10">
+                    <article className="mt-20 md:mt-0 md:ml-10 md:0 px-3 md:pl-10 md:pr-10">
                         <h1 className="font-bold text-3xl my-5">Dashboard Overview</h1>
                         <aside className="flex flex-col md:flex-row gap-8">
                             <div className="flex-1 min-h-20 bg-[#FAFAFBFF] rounded-sm border-1 border-solid border-gray-200 p-2">
