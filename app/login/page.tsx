@@ -108,6 +108,7 @@ export default function Login() {
               onClick={handleGoogleSignIn}
               className="bg-[#FAFAFBFF] w-full h-13 text-black cursor-pointer rounded-sm mb-3"
             >
+              <i className="fa-brands fa-google mr-2"></i>
               Continue with Google
             </button>
           </nav>

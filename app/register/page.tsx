@@ -108,6 +108,7 @@ export default function Register() {
             onClick={handleGoogleSignIn}
             className="bg-[#FAFAFBFF] w-full h-12 text-black cursor-pointer rounded-sm mb-3"
           >
+            <i className="fa-brands fa-google mr-2"></i>
             Continue with Google
           </button>
 
